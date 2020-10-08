@@ -1,26 +1,26 @@
-import * as React from "react"
-import { theme } from "../theme"
-import styled from "styled-components"
+import * as React from "react";
+import { theme } from "../theme";
+import styled from "styled-components";
 
 // Types
 export type Props = {
   /** Arrow position */
-  arrow?: "top" | "right" | "bottom" | "left"
+  arrow?: "top" | "right" | "bottom" | "left";
 
   /** Set error state  */
-  error?: boolean
-}
+  error?: boolean;
+};
 
 // Component
 export const Tooltip: React.FC<Props> = ({
   arrow = "left",
   error,
-  children
+  children,
 }) => (
   <StyledTooltip className={`${error ? "error" : ""} ${arrow ? arrow : ""}`}>
     {children}
   </StyledTooltip>
-)
+);
 
 // Styling
 const StyledTooltip = styled.span`
@@ -84,4 +84,4 @@ const StyledTooltip = styled.span`
   &.error.left:before {
     border-right-color: ${theme.color.danger};
   }
-`
+`;
